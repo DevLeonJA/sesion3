@@ -24,8 +24,8 @@ class CuentaTest {
 
 	@BeforeEach
 	void setUp() throws Exception {
-		c1 = new Cuenta("12345",50);
-		c2 = new Cuenta("6789", 0);
+		c1 = new Cuenta("12345","Titular1",50);
+		c2 = new Cuenta("6789","Titular2" ,0);
 	}
 
 	@AfterEach

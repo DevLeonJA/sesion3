@@ -2,9 +2,13 @@ package sesion3;
 
 public class Cuenta {
 	private double saldo;
+	private String numero;
+	private String titular;
 	
-	public Cuenta(int i) {
+	public Cuenta(String string, String string2, int i) {
+		numero=string;
 		saldo=i;
+		titular=string2;
 	}
 
 	public void ingresar(double i) {
@@ -13,13 +17,15 @@ public class Cuenta {
 	}
 
 	public double getSaldo() {
-		// TODO Auto-generated method stub
+		
 		return saldo;
 	}
 
 	public void retirar(double i) {
-	
-		saldo-=i;
+		if(saldo - i>=-500)
+		{
+			saldo-=i;
+		}
 	}
 
 }
