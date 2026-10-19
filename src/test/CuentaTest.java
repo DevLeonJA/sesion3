@@ -60,4 +60,18 @@ class CuentaTest {
 		assertEquals(-250.0,c1.getSaldo());
 		assertEquals(-450.0, c2.getSaldo());
 	}
+	
+	@Test
+	void testIngresarCreaUnMovimiento() {
+	    Cuenta cuenta = new Cuenta("12345", "Juan", 0.0);
+	        
+	    cuenta.ingresar(100.0);
+	    
+	    assertEquals(1, cuenta.getMovimientos().size(), "Debe haber 1 movimiento registrado");
+	    
+	    Movimiento mov = cuenta.getMovimientos().get(0);
+	    assertEquals(100.0, mov.getImporte(), "El importe del movimiento debe ser 100.0");
+
+	    assertEquals(Signo.H, mov.getSigno(), "El signo de un ingreso debe ser H"); 
+	}
 }
