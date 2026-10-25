@@ -9,6 +9,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import sesion3.Cuenta;
+import sesion3.Movimiento;
 
 class CuentaTest {
 	
@@ -67,11 +68,11 @@ class CuentaTest {
 	        
 	    cuenta.ingresar(100.0);
 	    
-	    assertEquals(1, cuenta.getMovimientos().size(), "Debe haber 1 movimiento registrado");
+	    assertEquals(1, cuenta.getMovimientos().size());
 	    
 	    Movimiento mov = cuenta.getMovimientos().get(0);
-	    assertEquals(100.0, mov.getImporte(), "El importe del movimiento debe ser 100.0");
+	    assertEquals(100.0, mov.getImporte());
 
-	    assertEquals(Signo.H, mov.getSigno(), "El signo de un ingreso debe ser H"); 
+	    assertEquals(Movimiento.Signo.H, mov.getSigno()); 
 	}
 }
